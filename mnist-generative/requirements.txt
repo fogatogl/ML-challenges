@@ -1,0 +1,32 @@
+# requirements.txt — mnist-generative
+#
+# IMPORTANT: this deliberately does NOT pin torch / torchvision.
+# The Onyxia "service-pytorch" image ships a torch build matched to its
+# CUDA driver. Re-installing torch via pip can silently swap in a CPU-only
+# or CUDA-mismatched wheel and break GPU access. Verify what's already
+# there with `python scripts/check_env.py` before adding anything torch-related.
+# If torchvision is missing (rare), add it manually matching your torch's
+# CUDA tag, e.g.: pip install torchvision --index-url https://download.pytorch.org/whl/cu121
+
+# --- core scientific stack ---
+numpy
+matplotlib
+seaborn
+
+# --- config + experiment bookkeeping ---
+pyyaml
+tqdm
+
+# --- logging / visualization ---
+tensorboard
+imageio          # for training-evolution GIFs (Phase 2+)
+
+# --- S3 / MinIO (fallback if you prefer boto3 over the `mc` CLI) ---
+boto3
+
+# --- notebooks (exploration only, per project rules) ---
+ipykernel
+jupyter
+
+# --- optional but handy for metrics/eval in Phase 5 ---
+scikit-learn

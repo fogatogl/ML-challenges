@@ -1,0 +1,21 @@
+# configs/example.yaml
+# One small yaml per experiment. Copy this file, rename it, change what you're testing.
+
+experiment_name: classifier_baseline
+seed: 42
+
+data:
+  normalization: unit      # "unit" [0,1] or "tanh" [-1,1]
+  batch_size: 128
+  num_workers: 4
+  pin_memory: true
+
+model:
+  # model-specific fields go here, e.g. latent_dim for VAE, arch dims, etc.
+
+train:
+  epochs: 10
+  lr: 1.0e-3
+  mixed_precision: true
+  checkpoint_every_min: 10
+  log_dir: runs/classifier_baseline

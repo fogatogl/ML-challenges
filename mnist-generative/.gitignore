@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & checkpoints — these live on S3, not in git (see SETUP.md)
+data/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+
+# Logs
+runs/
+tensorboard/
+*.log
+
+# Generated media
+*.gif
+outputs/
+
+# OS / editor
+.DS_Store
+.vscode/settings.json
